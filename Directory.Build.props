@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+    <PropertyGroup Label="Framework and language configuration">
+        <TargetFramework>net471</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>true</ImplicitUsings>
+    </PropertyGroup>
+
+    <PropertyGroup Label="Game folder configuration">
+        <ONIDIR Condition="'$(ONIDIR)' == ''">D:/SteamLibrary/steamapps/common/OxygenNotIncluded/</ONIDIR>
+    </PropertyGroup>
+    <PropertyGroup Label="Mods folder configuration">
+        <ONIMODDIR Condition="'$(ONIMODDIR)' == ''">$(USERPROFILE)/Documents/Klei/OxygenNotIncluded/mods/Local/</ONIMODDIR>
+    </PropertyGroup>
+
+    <PropertyGroup Label="Build and namespace configuration">
+        <SolutionDir Condition="'$(SolutionDir)'==''">$(MSBuildThisFileDirectory)</SolutionDir>
+        <BaseOutputPath>$(SolutionDir)build/bin/$(MSBuildProjectName)</BaseOutputPath>
+        <BaseIntermediateOutputPath>$(SolutionDir)build/obj/$(MSBuildProjectName)</BaseIntermediateOutputPath>
+        <AssemblyName>$(MSBuildProjectName)</AssemblyName>
+        <RootNamespace>$(AssemblyName)</RootNamespace>
+        <Configurations>Debug;Release;Deploy;DeployAndRun</Configurations>
+        <Platforms>AnyCPU</Platforms>
+        <NoWarn>$(NoWarn);CS0436</NoWarn>
+    </PropertyGroup>
+</Project>
